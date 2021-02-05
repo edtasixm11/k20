@@ -31,7 +31,9 @@ docker run --rm --name kserver.edt.org -h kserver.edt.org -p 749:749 -p 88:88 -p
 docker run --rm --name khost.edt.org -h khost.edt.org --net 2hisix -it edtasixm11/k20:khost-pam-ldap
 ```
 
-### Teoria
+## Teoria
+
+### Authenticació d'usuaris
 
 **Autenticaction Provider AP**
 
@@ -73,5 +75,21 @@ El model que mantindrem a tot el mòsul ASIX M11-SAD és el següent:
 Es resum, podem verificar l'accés/autenticació d'usuaris locals usant el prototipus *local01*, podem fer test de la
 connectivitat kerberos amb comptes locals amb usuaris tipus *kuser01*.  I finalment podem verificar l'autenticació
 d'usuaris kerberos (AP9 amb LDAP (AP)  amb els clàssics pere (kpere).
+
+
+Desplegament:
+
+  * **Local**:  desplegar al host de l'aula localment els tres containers, servidor kerberos, ldap i client khost.
+    Verificar que el khost pot llistar la base de dades LDAP, pot obtenir tikets kerberos, autenticar com un 
+    usuari administrador kerberos amb kadmin i iniciar sessions d'usuaris locals (local01) i usuaris LDAP+kerberos 
+    com per exemple pere/kpere.
+
+  * **Remot-container-khost**: desplegar a un entorn cloud (per exemple AWS EC2) els dos servidors LDAP i Kerberos, 
+    configurar l'accés remot als seus ports (security groups) i desplegar localment el client khost verificat els
+    mateixos passos que l'apartat anterior.
+
+  * **Remot-host-real**: desplegar a un entorn cloud (per exemple AWS EC2) els dos servidors LDAP i Kerberos, 
+    configurar l'accés remot als seus ports (security groups) i  configurar un *host real  de l'aula* per
+    fer autenticació d'usuari contra els serveis al cloud. Verificar els mateixos passos que l'apartat anterior.
 
 
