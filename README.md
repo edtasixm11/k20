@@ -93,3 +93,23 @@ Desplegament:
     fer autenticació d'usuari contra els serveis al cloud. Verificar els mateixos passos que l'apartat anterior.
 
 
+## Versions de Fedora
+
+### Fedora 27
+
+Amb Fedora 27 podem configurar fàclment l'autenticació amb *autgconfig* establint les opcions d'autenticació següents:
+```
+authconfig  --enableshadow --enablelocauthorize --enableldap \
+            --ldapserver='ldap.edt.org' --ldapbase='dc=edt,dc=org' \
+            --enablekrb5 --krb5kdc='kserver.edt.org' \
+            --krb5adminserver='kserver.edt.org' --krb5realm='EDT.ORG' \
+            --enablemkhomedir --updateall
+```
+
+### Fedora 32
+
+Amb Fedora 32 no podem utilitzar authconfig de manera que cal treballar amb authselect o configurar a mà els fitxers
+implicats en el procediment d'autenticació. En un container és més entretingut. En la màquina real podem practicar
+a configurar la capa superior usant SSSD.
+
+
