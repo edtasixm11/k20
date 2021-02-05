@@ -25,7 +25,7 @@ ASIX M11-SAD Escola del treball de barcelona
 
 '''
 docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389  -d edtasixm06/ldap20:latest
-docker run --rm --name kserver.edt.org -h kserver.edt.org --net 2hisix -d edtasixm11/k20:kserver
+docker run --rm --name kserver.edt.org -h kserver.edt.org -p 749:749 -p 88:88 -p 464:464 --net 2hisix -d edtasixm11/k20:kserver
 
 '''
 
