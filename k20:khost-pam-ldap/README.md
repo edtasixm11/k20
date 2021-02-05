@@ -18,5 +18,5 @@ A.B.C.D kserver.edt.org kserver
 '''
 
 '''
-docker run --rm --name khost.edt.org -h khost.edt.org --net 2hisix -it edtasixm11/k20:khost-pam
+docker run --rm --name khost.edt.org -h khost.edt.org --net 2hisix -it edtasixm11/k20:khost-pam-ldap
 '''
