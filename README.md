@@ -33,7 +33,7 @@ docker run --rm --name khost.edt.org -h khost.edt.org --net 2hisix -it edtasixm1
 
 ## Teoria
 
-### Authenticació d'usuaris
+### Authenticació 
 
 **Autenticaction Provider AP**
 
@@ -77,7 +77,7 @@ connectivitat kerberos amb comptes locals amb usuaris tipus *kuser01*.  I finalm
 d'usuaris kerberos (AP9 amb LDAP (AP)  amb els clàssics pere (kpere).
 
 
-Desplegament:
+#### Desplegament:
 
   * **Local**:  desplegar al host de l'aula localment els tres containers, servidor kerberos, ldap i client khost.
     Verificar que el khost pot llistar la base de dades LDAP, pot obtenir tikets kerberos, autenticar com un 
