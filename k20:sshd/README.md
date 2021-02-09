@@ -26,5 +26,5 @@ A.B.C.D kserver.edt.org kserver ldap.edt.org ldap
 '''
 
 ```
-docker run --rm --name sshd.edt.org -h sshd.edt.org -p 22:2022 --net 2hisix -d edtasixm11/k20:sshd
+docker run --rm --name sshd.edt.org -h sshd.edt.org -p 2022:22 --net 2hisix -d edtasixm11/k20:sshd
 ```
