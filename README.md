@@ -25,13 +25,13 @@ ASIX M11-SAD Escola del treball de barcelona
 
 ### Servei SSH Kerberitzat
 
-**edtasixm11/k19:sshd** Servidor SSHD *kerberitzat*. Servidor ssh que permet
-  l'accés d'usuaris locals i usuaris de xarxa. El servidor s'ha de dir *sshd.edt.org*.
-  Implementa sshd-pam-kerberos-ldap. Servidor SSH amb PAM amb autenticació 
-  AP de  kerberos i IP de ldap.   El servidor kerberos al que contacta s'ha de dir
-  *kserver.edt.org*. El servidor ldap   s'anomena *ldap.edt.org*. Aquest host es configura
-  amb authconfig. S'ha generat partint del host *edtasixm11/k20:khost-pam-ldap* i se li 
-  ha afegit la part del servidor sshd.
+  * **edtasixm11/k20:sshd** Servidor SSHD *kerberitzat*. Servidor ssh que permet
+    l'accés d'usuaris locals i usuaris de xarxa. El servidor s'ha de dir *sshd.edt.org*.
+    Implementa sshd-pam-kerberos-ldap. Servidor SSH amb PAM amb autenticació 
+    AP de  kerberos i IP de ldap.   El servidor kerberos al que contacta s'ha de dir
+    *kserver.edt.org*. El servidor ldap   s'anomena *ldap.edt.org*. Aquest host es configura
+    amb authconfig. S'ha generat partint del host *edtasixm11/k20:khost-pam-ldap* i se li 
+    ha afegit la part del servidor sshd.
 
 
 ```
