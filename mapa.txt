@@ -1,0 +1,5 @@
+kserver.edt.org           
+ldap.edt.org     --------  ssh.edt.org
+           \               /
+            \             /
+           khost-pam-ldap
