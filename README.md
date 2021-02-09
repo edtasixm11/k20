@@ -23,11 +23,21 @@ ASIX M11-SAD Escola del treball de barcelona
    kerberos *kserver.edt.org* i al servdior ldap *ldap.edt.org*.
    *nota* fet amb fedora27 per poder usar authconfig.
 
+### Servei SSH Kerberitzat
+
+**edtasixm11/k19:sshd** Servidor SSHD *kerberitzat*. Servidor ssh que permet
+  l'accés d'usuaris locals i usuaris de xarxa. El servidor s'ha de dir *sshd.edt.org*.
+  Implementa sshd-pam-kerberos-ldap. Servidor SSH amb PAM amb autenticació 
+  AP de  kerberos i IP de ldap.   El servidor kerberos al que contacta s'ha de dir
+  *kserver.edt.org*. El servidor ldap   s'anomena *ldap.edt.org*. Aquest host es configura
+  amb authconfig. S'ha generat partint del host *edtasixm11/k20:khost-pam-ldap* i se li 
+  ha afegit la part del servidor sshd.
+
 
 ```
 docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389  -d edtasixm06/ldap20:latest
 docker run --rm --name kserver.edt.org -h kserver.edt.org -p 749:749 -p 88:88 -p 464:464 --net 2hisix -d edtasixm11/k20:kserver
-
+docker run --rm --name sshd.edt.org -h sshd.edt.org -p 22:2022 --net 2hisix -d edtasixm11/k20:sshd
 docker run --rm --name khost.edt.org -h khost.edt.org --net 2hisix -it edtasixm11/k20:khost-pam-ldap
 ```
 
