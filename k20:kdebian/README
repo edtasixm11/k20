@@ -1,0 +1,3 @@
+# Debian auth amb LDAP+Kerbero
+
+apg get install vim procps libnss-ldap libpam-ldap nscd nslcd ldap-utils libpam-krb5 krb5-user 
